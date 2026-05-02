@@ -7,16 +7,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --red: #DC143C;
-    --red-bright: #E8305A;
-    --red-glow: #FF4D6D;
-    --red-dim: #7A0A20;
+    --red: #CA8A04;
+    --red-bright: #EAB308;
+    --red-glow: #FDE047;
+    --red-dim: #713F12;
     --dark: #0a0a0b;
     --dark2: #111114;
     --dark3: #18181d;
     --panel: #1a1a1f;
-    --border: #2a1218;
-    --border-bright: #DC143C;
+    --border: #2a2010;
+    --border-bright: #EAB308;
     --text: #e8e0d8;
     --text-dim: #8a7a72;
     --text-muted: #4a3a35;
@@ -419,6 +419,37 @@
 
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
 
+  .ctf-subsection-label {
+    font-family: var(--head);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border-left: 3px solid var(--red-bright);
+    padding-left: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .ctf-event-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    .ctf-event-card { grid-template-columns: 1fr; }
+  }
+
+  .ctf-event-left { border-right: 1px solid var(--border); padding-right: 2rem; }
+
+  @media (max-width: 600px) {
+    .ctf-event-left { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 1.5rem; }
+  }
+
   /* SKILLS */
   .skills-grid {
     display: grid;
@@ -698,7 +729,7 @@
 <nav>
   <div class="nav-logo"><span>~/</span>felisha-elmer</div>
   <ul>
-    <li><a href="#ncl">NCL</a></li>
+    <li><a href="#ctfs">CTFs</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#about">About</a></li>
@@ -722,19 +753,21 @@
     <span class="badge">Nonprofit Founder</span>
   </div>
   <div class="hero-cta">
-    <a href="#ncl" class="btn btn-primary">View NCL Results</a>
+    <a href="#ctfs" class="btn btn-primary">View CTF Results</a>
     <a href="#projects" class="btn btn-ghost">See My Work</a>
   </div>
 </section>
 
-<!-- NCL RESULTS -->
-<section id="ncl">
-  <div class="section-label">// Verified Competitive Rankings</div>
-  <h2>National Cyber League <em>Results</em></h2>
+<!-- CTFs -->
+<section id="ctfs">
+  <div class="section-label">// Capture The Flag Competitions</div>
+  <h2>CTF <em>Record</em></h2>
+
+  <!-- NCL SUBSECTION -->
+  <div class="ctf-subsection-label">National Cyber League (NCL)</div>
 
   <div class="ncl-grid">
 
-    <!-- Fall 2025 Team — DIAMOND — Crown jewel -->
     <div class="ncl-card diamond">
       <div class="ncl-season">NCL Fall 2025 · Team Game</div>
       <div class="ncl-title">Team Competition</div>
@@ -751,7 +784,6 @@
       </div>
     </div>
 
-    <!-- Spring 2025 Team — GOLD -->
     <div class="ncl-card gold">
       <div class="ncl-season">NCL Spring 2025 · Team Game</div>
       <div class="ncl-title">Team Competition</div>
@@ -767,7 +799,6 @@
       </div>
     </div>
 
-    <!-- Spring 2025 Individual — PLATINUM -->
     <div class="ncl-card platinum">
       <div class="ncl-season">NCL Spring 2025 · Individual</div>
       <div class="ncl-title">Individual Game</div>
@@ -783,7 +814,6 @@
       </div>
     </div>
 
-    <!-- Fall 2025 Individual — GOLD -->
     <div class="ncl-card gold">
       <div class="ncl-season">NCL Fall 2025 · Individual</div>
       <div class="ncl-title">Individual Game</div>
@@ -801,8 +831,7 @@
 
   </div>
 
-  <!-- Active badge -->
-  <div class="ncl-active">
+  <div class="ncl-active" style="margin-bottom:3rem;">
     <div class="ncl-active-text">
       <span><span class="pulse-dot"></span>CURRENTLY ACTIVE</span>
       NCL Spring 2026 — Season In Progress
@@ -811,6 +840,30 @@
       The NCL Scouting Report is a verified skills credential recognized by cybersecurity employers nationwide. Diamond placement requires competing against graduate students and industry professionals.
     </div>
   </div>
+
+  <!-- CTF@CIT SUBSECTION -->
+  <div class="ctf-subsection-label">CTF@CIT</div>
+
+  <div class="ctf-event-card">
+    <div class="ctf-event-left">
+      <div class="ncl-season">CTF@CIT · Team Competition</div>
+      <div class="ncl-title">SFCC Encryptids</div>
+      <div style="display:flex;align-items:baseline;gap:0.75rem;margin-top:0.5rem;">
+        <span style="font-family:var(--head);font-size:1.4rem;font-weight:700;color:var(--text);">275th Place</span>
+        <span style="font-family:var(--mono);font-size:0.9rem;color:var(--red-glow);font-weight:700;">8,923 pts total</span>
+      </div>
+    </div>
+    <div class="ctf-event-right">
+      <div class="ncl-cat-label" style="margin-bottom:0.5rem;">Team Scores</div>
+      <div class="ncl-cat-item"><span>GetEmTiger (Captain)</span><span class="ncl-cat-score" style="color:var(--red-glow);font-weight:700;">5,327 pts</span></div>
+      <div class="ncl-cat-item"><span>quickdraw-outlaw</span><span class="ncl-cat-score">1,829 pts</span></div>
+      <div class="ncl-cat-item"><span>sezioN</span><span class="ncl-cat-score">1,767 pts</span></div>
+      <div style="margin-top:0.75rem;font-family:var(--mono);font-size:0.65rem;color:var(--red);letter-spacing:0.1em;">
+        ★ Captain · 60% of team total score
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- SKILLS -->
