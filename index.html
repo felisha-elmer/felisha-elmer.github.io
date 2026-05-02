@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felisha Elmer | Cybersecurity Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a0f1e;
+    --navy-mid: #111827;
+    --navy-light: #1e2a3a;
+    --blood: #922B21;
+    --blood-dim: #7B241C;
+    --blood-glow: rgba(146,43,33,0.12);
+    --amber: #f59e0b;
+    --white: #f8fafc;
+    --muted: #94a3b8;
+    --border: rgba(255,255,255,0.08);
+    --card-bg: rgba(255,255,255,0.04);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── GRID TEXTURE ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(146,43,33,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(146,43,33,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(10,15,30,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--blood);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--blood); }
+
+  /* ── SECTIONS ── */
+  section {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blood);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: #922B21;
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 span {
+    color: var(--blood);
+    display: block;
+  }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    background: #922B21;
+    color: var(--navy);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    border: 1px solid var(--border);
+    color: var(--white);
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--blood);
+    color: var(--blood);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 5rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--blood);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blood);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: #922B21;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 3.5rem;
+    line-height: 1.1;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+
+  .about-text p strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .about-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .fact-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .fact-card:hover {
+    border-color: rgba(146,43,33,0.3);
+    background: var(--blood-glow);
+  }
+
+  .fact-icon {
+    font-size: 1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blood-glow);
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .fact-content strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+
+  .fact-content span {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-category {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: border-color 0.2s;
+  }
+
+  .skill-category:hover { border-color: rgba(146,43,33,0.25); }
+
+  .skill-cat-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blood);
+    margin-bottom: 1.25rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tag {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+    transition: all 0.2s;
+  }
+
+  .skill-tag:hover {
+    background: var(--blood-glow);
+    border-color: rgba(146,43,33,0.4);
+    color: var(--blood);
+  }
+
+  /* ── PORTFOLIO ── */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: #922B21;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .project-card:hover {
+    border-color: rgba(146,43,33,0.2);
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.06);
+  }
+
+  .project-card:hover::before { transform: scaleX(1); }
+
+  .project-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    margin-bottom: 1.25rem;
+  }
+
+  .badge-blue { background: rgba(146,43,33,0.12); color: #e55a4e; }
+  .badge-teal { background: rgba(146,43,33,0.12); color: #c0392b; }
+  .badge-amber { background: rgba(245,158,11,0.12); color: var(--amber); }
+  .badge-red { background: rgba(239,68,68,0.12); color: #ef4444; }
+
+  .project-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+
+  .project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tool-chip {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--muted);
+    font-family: 'DM Sans', monospace;
+  }
+
+  /* ── NONPROFIT ── */
+  .nonprofit-section {
+    background: linear-gradient(135deg, rgba(146,43,33,0.06) 0%, rgba(10,15,30,0) 60%);
+    border: 1px solid rgba(146,43,33,0.15);
+    border-radius: 16px;
+    padding: 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nonprofit-section::after {
+    content: '';
+    position: absolute;
+    top: -2rem; right: -2rem;
+    width: 10rem;
+    height: 10rem;
+    background: radial-gradient(circle, rgba(146,43,33,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .nonprofit-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .nonprofit-text h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .nonprofit-text h3 span { color: var(--blood); }
+
+  .nonprofit-text p {
+    color: var(--muted);
+    line-height: 1.75;
+    font-size: 0.975rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  .nonprofit-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pillar {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .pillar-dot {
+    width: 8px;
+    height: 8px;
+    background: #922B21;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .pillar span {
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+
+  .pillar strong {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.1rem;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.4rem;
+    top: 0.4rem;
+    width: 8px;
+    height: 8px;
+    background: #922B21;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(146,43,33,0.15);
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+    color: var(--blood);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-sub {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-text p {
+    color: var(--muted);
+    line-height: 1.75;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--card-bg);
+  }
+
+  .contact-link:hover {
+    color: var(--blood);
+    border-color: rgba(146,43,33,0.3);
+  }
+
+  .contact-link-icon {
+    width: 2rem;
+    height: 2rem;
+    background: var(--blood-glow);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .certs-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+
+  .certs-box h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blood);
+    margin-bottom: 1.25rem;
+  }
+
+  .cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+  }
+
+  .cert-item:last-child { border-bottom: none; }
+
+  .cert-item span { color: var(--muted); font-size: 0.8rem; }
+
+  .cert-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .cert-pending {
+    background: rgba(245,158,11,0.12);
+    color: var(--amber);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  footer span { color: var(--blood); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  .hero h1 { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-desc { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-ctas { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-stats { animation: fadeUp 0.6s 0.4s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .about-grid, .contact-grid, .nonprofit-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .nonprofit-section { padding: 2rem; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">FE//SEC</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Cybersecurity Portfolio</p>
+  <h1>
+    Felisha<br>
+    <span>Elmer</span>
+  </h1>
+  <p class="hero-desc">
+    IT & Cybersecurity professional focused on cyber defense, digital forensics, and network security. Graduating with a 3.99 GPA — and building technology to protect children online.
+  </p>
+  <div class="hero-ctas">
+    <a href="#portfolio" class="btn-primary">View My Work ↓</a>
+    <a href="#contact" class="btn-outline">Get In Touch</a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <span class="stat-num">3.99</span>
+      <span class="stat-label">GPA — President's List</span>
+    </div>
+    <div>
+      <span class="stat-num">14+</span>
+      <span class="stat-label">Technical Courses</span>
+    </div>
+    <div>
+      <span class="stat-num">A.A.S.</span>
+      <span class="stat-label">IT / Cybersecurity, 2026</span>
+    </div>
+    <div>
+      <span class="stat-num">1</span>
+      <span class="stat-label">Nonprofit In Progress</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">Background</p>
+  <h2 class="section-title">Who I Am</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a cybersecurity student at <strong>Spokane Falls Community College</strong>, graduating Spring 2026 with an A.A.S. in IT/Cybersecurity — Cyber Defender emphasis. I return in Fall 2026 to complete my B.A.S.</p>
+      <p>In my day-to-day, I work as a <strong>Lab Technician</strong> supporting five IT lab environments, serve as <strong>VP of the Applied Technologies Club</strong>, and balance gig work and homeschooling my two boys. I thrive under pressure and don't stop until things work.</p>
+      <p>My path into cybersecurity wasn't straight — it was earned. That gives me a perspective and drive that pure-track students don't always have.</p>
+    </div>
+    <div class="about-facts">
+      <div class="fact-card">
+        <div class="fact-icon">🎓</div>
+        <div class="fact-content">
+          <strong>Spokane Falls Community College</strong>
+          <span>A.A.S. IT/Cybersecurity — Cyber Defender | GPA 3.99</span>
+        </div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🔬</div>
+        <div class="fact-content">
+          <strong>Lab Technician — SFCC IT Dept.</strong>
+          <span>Supporting 5 lab environments, 20+ hrs/week</span>
+        </div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🏛</div>
+        <div class="fact-content">
+          <strong>VP, Applied Technologies Club</strong>
+          <span>Student leadership, events, and peer support</span>
+        </div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">📍</div>
+        <div class="fact-content">
+          <strong>Spokane, WA</strong>
+          <span>Open to remote and local cybersecurity opportunities</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">Capabilities</p>
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <p class="skill-cat-title">Defense & SOC</p>
+      <div class="skill-tags">
+        <span class="skill-tag">SIEM / Splunk</span>
+        <span class="skill-tag">Kibana</span>
+        <span class="skill-tag">Suricata IDS</span>
+        <span class="skill-tag">Log Analysis</span>
+        <span class="skill-tag">Incident Response</span>
+        <span class="skill-tag">Threat Triage</span>
+        <span class="skill-tag">IOC Analysis</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <p class="skill-cat-title">Network Security</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Wireshark</span>
+        <span class="skill-tag">pfSense</span>
+        <span class="skill-tag">Firewall Rules</span>
+        <span class="skill-tag">VPN Config</span>
+        <span class="skill-tag">Nmap / Recon</span>
+        <span class="skill-tag">Pen Testing</span>
+        <span class="skill-tag">Network Diagramming</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <p class="skill-cat-title">Forensics & Malware</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Memory Forensics</span>
+        <span class="skill-tag">Registry Analysis</span>
+        <span class="skill-tag">Chain of Custody</span>
+        <span class="skill-tag">Malware Analysis</span>
+        <span class="skill-tag">Cyberbit Labs</span>
+        <span class="skill-tag">Static Analysis</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <p class="skill-cat-title">Systems & Scripting</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Linux (Kali / Ubuntu)</span>
+        <span class="skill-tag">Windows Server</span>
+        <span class="skill-tag">Bash Scripting</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Batch / CMD</span>
+        <span class="skill-tag">Active Directory</span>
+        <span class="skill-tag">System Imaging</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <p class="skill-cat-title">Cloud & Web Security</p>
+      <div class="skill-tags">
+        <span class="skill-tag">AWS (in progress)</span>
+        <span class="skill-tag">SQL Injection</span>
+        <span class="skill-tag">PHP Security</span>
+        <span class="skill-tag">Secure Cloud Config</span>
+        <span class="skill-tag">IAM Concepts</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <p class="skill-cat-title">Professional</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Technical Writing</span>
+        <span class="skill-tag">Documentation</span>
+        <span class="skill-tag">IT Support</span>
+        <span class="skill-tag">Lab Management</span>
+        <span class="skill-tag">Team Leadership</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <p class="section-label">Lab Work & Projects</p>
+  <h2 class="section-title">Selected Work</h2>
+  <div class="portfolio-grid">
+
+    <div class="project-card">
+      <span class="project-badge badge-red">Network Security</span>
+      <h3 class="project-title">Malicious Network Traffic Analysis</h3>
+      <p class="project-desc">Analyzed live packet captures to identify attack patterns, IOCs, and lateral movement within a simulated enterprise network. Produced formal incident reports documenting findings and remediation steps.</p>
+      <div class="project-tools">
+        <span class="tool-chip">Wireshark</span>
+        <span class="tool-chip">PCAP Analysis</span>
+        <span class="tool-chip">IOC Documentation</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-teal">Cyber Defense</span>
+      <h3 class="project-title">Initial Triage & Incident Response</h3>
+      <p class="project-desc">Conducted structured triage procedures on simulated cybersecurity incidents. Documented initial findings, escalation paths, and recommended containment strategies using industry-standard frameworks.</p>
+      <div class="project-tools">
+        <span class="tool-chip">Triage Methodology</span>
+        <span class="tool-chip">Incident Reporting</span>
+        <span class="tool-chip">IS141 / IS241</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-blue">Forensics</span>
+      <h3 class="project-title">Memory Forensics — Daniel-PC</h3>
+      <p class="project-desc">Performed full memory forensic investigation on a compromised Windows system. Extracted artifacts, identified malicious processes, and produced a formal forensic report with chain of custody documentation.</p>
+      <div class="project-tools">
+        <span class="tool-chip">Memory Analysis</span>
+        <span class="tool-chip">Registry Forensics</span>
+        <span class="tool-chip">Chain of Custody</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-amber">SIEM</span>
+      <h3 class="project-title">Kibana & Splunk Security Monitoring</h3>
+      <p class="project-desc">Built and configured Kibana dashboards for security event visualization. Completed Splunk lab exercises for log ingestion, alerting, and threat hunting workflows.</p>
+      <div class="project-tools">
+        <span class="tool-chip">Kibana</span>
+        <span class="tool-chip">Splunk</span>
+        <span class="tool-chip">Log Analysis</span>
+        <span class="tool-chip">SIEM</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-red">Pen Testing</span>
+      <h3 class="project-title">pfSense Firewall Penetration Testing</h3>
+      <p class="project-desc">Configured and then penetration-tested a pfSense firewall environment. Identified misconfigurations, exploited a simulated VPN, and documented attack surface findings with remediation recommendations.</p>
+      <div class="project-tools">
+        <span class="tool-chip">pfSense</span>
+        <span class="tool-chip">VPN</span>
+        <span class="tool-chip">Nmap</span>
+        <span class="tool-chip">Pen Testing</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-blue">Malware</span>
+      <h3 class="project-title">Malware Analysis — Cyberbit Labs</h3>
+      <p class="project-desc">Completed structured malware analysis exercises in Cyberbit's enterprise-grade simulation environment. Performed static and dynamic analysis, identified persistence mechanisms, and documented behavioral indicators.</p>
+      <div class="project-tools">
+        <span class="tool-chip">Cyberbit</span>
+        <span class="tool-chip">Static Analysis</span>
+        <span class="tool-chip">Behavioral IOCs</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-teal">Web Security</span>
+      <h3 class="project-title">SQL Injection & Web Attack Labs</h3>
+      <p class="project-desc">Practiced offensive and defensive web security techniques including SQL injection, input validation bypass, and PHP security hardening in controlled lab environments.</p>
+      <div class="project-tools">
+        <span class="tool-chip">SQL Injection</span>
+        <span class="tool-chip">PHP</span>
+        <span class="tool-chip">Web App Security</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-amber">Scripting</span>
+      <h3 class="project-title">Linux Scripting & Automation</h3>
+      <p class="project-desc">Developed Bash scripts for login failure monitoring, arithmetic automation, and system tasks on Ubuntu and Kali Linux. Also wrote Python utilities for IT automation use cases.</p>
+      <div class="project-tools">
+        <span class="tool-chip">Bash</span>
+        <span class="tool-chip">Python</span>
+        <span class="tool-chip">Linux</span>
+        <span class="tool-chip">Kali</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- NONPROFIT / MISSION -->
+<section id="mission">
+  <p class="section-label">Beyond the Work</p>
+  <h2 class="section-title">My Mission</h2>
+  <div class="nonprofit-section">
+    <div class="nonprofit-grid">
+      <div class="nonprofit-text">
+        <h3>Protecting Kids<br><span>in Digital Spaces</span></h3>
+        <p>I'm building a nonprofit focused on online safety in gaming environments — a space where children are particularly vulnerable to predatory behavior, grooming, and exploitation, yet largely underserved by existing safety tools and education.</p>
+        <p>As a mother, a cybersecurity professional-in-training, and someone who understands both the technical and human dimensions of these threats, I'm uniquely positioned to bridge that gap.</p>
+        <a href="#contact" class="btn-outline" style="display:inline-flex; margin-top: 0.5rem;">Connect With Me</a>
+      </div>
+      <div class="nonprofit-pillars">
+        <div class="pillar">
+          <div class="pillar-dot"></div>
+          <div>
+            <strong>Education & Awareness</strong>
+            <span>Teaching parents, kids, and gaming communities to recognize and report threats</span>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-dot"></div>
+          <div>
+            <strong>Technical Safety Tools</strong>
+            <span>Developing resources that give families real control over gaming environments</span>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-dot"></div>
+          <div>
+            <strong>Community Partnerships</strong>
+            <span>Collaborating with schools, gaming platforms, and law enforcement</span>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-dot"></div>
+          <div>
+            <strong>Incident Reporting Pathways</strong>
+            <span>Clear, accessible guidance for families when something goes wrong</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE TIMELINE -->
+<section>
+  <p class="section-label">Journey</p>
+  <h2 class="section-title">Experience & Education</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+    <div>
+      <p style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--blood); margin-bottom:1.5rem;">Work Experience</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <p class="timeline-date">Jan 2025 – Present</p>
+          <p class="timeline-title">Lab Technician L1 — SFCC IT Dept.</p>
+          <p class="timeline-sub">Supporting 5 labs, system imaging, hardware troubleshooting, network setup</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">Nov 2020 – Present</p>
+          <p class="timeline-title">Independent Contractor — Gig Driver</p>
+          <p class="timeline-sub">Spark, Flex, DoorDash — logistics, scheduling, accountability</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">May 2019 – Aug 2020</p>
+          <p class="timeline-title">Lead Operator II — Huntwood</p>
+          <p class="timeline-sub">Precision manufacturing, equipment maintenance, team lead</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--blood); margin-bottom:1.5rem;">Education</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <p class="timeline-date">2026 – 2028</p>
+          <p class="timeline-title">B.A.S. Cybersecurity — SFCC</p>
+          <p class="timeline-sub">Continuing education — returning Fall 2026</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">2024 – 2026</p>
+          <p class="timeline-title">A.A.S. IT/Cybersecurity — SFCC</p>
+          <p class="timeline-sub">Cyber Defender emphasis | GPA 3.99 | President's List</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">In Progress</p>
+          <p class="timeline-title">CompTIA Security+</p>
+          <p class="timeline-sub">Expected completion 2026</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">In Progress</p>
+          <p class="timeline-title">AWS Cloud Practitioner</p>
+          <p class="timeline-sub">Expected completion 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">Let's Talk</p>
+  <h2 class="section-title">Get In Touch</h2>
+  <div class="contact-grid">
+    <div class="contact-text">
+      <p>I'm actively looking for cybersecurity internships, entry-level SOC analyst roles, and partnerships related to my nonprofit mission. If something here resonates — reach out.</p>
+      <div class="contact-links">
+        <a href="mailto:Felishaelmer@gmail.com" class="contact-link">
+          <div class="contact-link-icon">✉</div>
+          Felishaelmer@gmail.com
+        </a>
+        <a href="tel:5098180433" class="contact-link">
+          <div class="contact-link-icon">☎</div>
+          ( 509) 818-0433
+        </a>
+        <a href="https://linkedin.com/in/felisha-elmer" target="_blank" class="contact-link">
+          <div class="contact-link-icon">in</div>
+          linkedin.com/in/felisha-elmer
+        </a>
+        <a href="#" class="contact-link">
+          <div class="contact-link-icon">📍</div>
+          Spokane, WA — open to remote
+        </a>
+      </div>
+    </div>
+    <div class="certs-box">
+      <h4>Certifications & Credentials</h4>
+      <div class="cert-item">
+        <div>
+          <div style="font-size:0.875rem; font-weight:500;">CompTIA Security+</div>
+          <span>Core cybersecurity fundamentals</span>
+        </div>
+        <span class="cert-badge cert-pending">In Progress</span>
+      </div>
+      <div class="cert-item">
+        <div>
+          <div style="font-size:0.875rem; font-weight:500;">AWS Cloud Practitioner</div>
+          <span>Cloud foundations & security</span>
+        </div>
+        <span class="cert-badge cert-pending">In Progress</span>
+      </div>
+      <div class="cert-item">
+        <div>
+          <div style="font-size:0.875rem; font-weight:500;">A.A.S. IT/Cybersecurity</div>
+          <span>SFCC — Cyber Defender Emphasis</span>
+        </div>
+        <span class="cert-badge" style="background:rgba(146,43,33,0.12); color:var(--blood);">Spring 2026</span>
+      </div>
+      <div class="cert-item">
+        <div>
+          <div style="font-size:0.875rem; font-weight:500;">President's List</div>
+          <span>3.99 GPA — Academic Excellence</span>
+        </div>
+        <span class="cert-badge" style="background:rgba(146,43,33,0.12); color:var(--blood);">Active</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built by <span>Felisha Elmer</span> · Spokane, WA · felishaelmer@gmail.com</p>
+</footer>
+
+</body>
+</html>
